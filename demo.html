@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Time input</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+    }
+
+    .demo {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .date-input {
+      display: inline-block;
+      max-width: auto;
+      border: 1px solid grey;
+      margin: auto;
+      font-family: monospace;
+      font-size: 2rem;
+      border-radius: .25rem;
+      overflow: hidden;
+    }
+
+    .date-input input {
+      box-sizing: border-box;
+      appearance: none;
+      width: 3.5ch;
+      float: left;
+      padding: .5ch .75ch;
+      border: 0;
+      font-family: monospace;
+      font-size: inherit;
+      -webkit-appearance: none;
+      outline: none;
+    }
+
+    .date-input__separator {
+      position: absolute;
+      margin-left: -.5ch;
+      float: left;
+      padding: .5ch 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo">
+    <div class="date-input">
+      <input type="text" placeholder="mm" inputmode="numeric" data-date-input-format="minutes" name="brew_time" step="1" pattern="[0-9]|[0-5][0-9]" maxlength="2" required>
+      <span class="date-input__separator">:</span>
+      <input type="text" placeholder="ss" inputmode="numeric" data-date-input-format="seconds" name="brew_time" step="1" pattern="[0-9]|[0-5][0-9]" maxlength="2" required>
+    </div>
+  </div>
+  <script src="DateInput.js"></script>
+  <script src="demo.js"></script>
+</body>
+</html>
