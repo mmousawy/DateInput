@@ -33,8 +33,11 @@ Gyutou.prototype.binds.seconds = {
       event.target.value = event.target.value.toString().padStart(2, '0');
     }
 
-    const minutesElement = Array.from(this.inputs).find(input => input.dataset.gyutouFormat === 'minutes');
+    if (event.target.value.length < 1) {
+      return;
+    }
 
+    const minutesElement = Array.from(this.inputs).find(input => input.dataset.gyutouFormat === 'minutes');
 
     setTimeout(() => {
       if (document.activeElement === minutesElement) {
