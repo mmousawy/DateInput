@@ -17,7 +17,7 @@
       height: 100vh;
     }
 
-    .date-input {
+    .gyutou-input.gyutou-input__time {
       display: inline-block;
       max-width: auto;
       border: 1px solid grey;
@@ -28,10 +28,10 @@
       overflow: hidden;
     }
 
-    .date-input input {
+    .gyutou-input.gyutou-input__time input {
       box-sizing: border-box;
       appearance: none;
-      width: 3.5ch;
+      width: 3.6ch;
       float: left;
       padding: .5ch .75ch;
       border: 0;
@@ -41,9 +41,9 @@
       outline: none;
     }
 
-    .date-input__separator {
+    .gyutou-input .gyutou-input__separator {
       position: absolute;
-      margin-left: -.5ch;
+      margin-left: -.55ch;
       float: left;
       padding: .5ch 0;
       pointer-events: none;
@@ -52,13 +52,15 @@
 </head>
 <body>
   <div class="demo">
-    <div class="date-input">
-      <input type="text" placeholder="mm" inputmode="numeric" data-date-input-format="minutes" name="brew_time" step="1" pattern="[0-9]|[0-5][0-9]" maxlength="2" required>
-      <span class="date-input__separator">:</span>
-      <input type="text" placeholder="ss" inputmode="numeric" data-date-input-format="seconds" name="brew_time" step="1" pattern="[0-9]|[0-5][0-9]" maxlength="2" required>
+    <div class="gyutou-input gyutou-input__time">
+      <input type="text" placeholder="mm" inputmode="numeric" data-gyutou-format="minutes" name="brew_time" pattern="[0-9]|[0-5][0-9]" maxlength="2" required>
+      <span class="gyutou-input__separator">:</span>
+      <input type="text" placeholder="ss" inputmode="numeric" data-gyutou-format="seconds" name="brew_time" pattern="[0-9]|[0-5][0-9]" maxlength="2" required>
     </div>
   </div>
-  <script src="DateInput.js"></script>
+  <script src="gyutou.js"></script>
+  <script src="gyutou-binds/minutes.js"></script>
+  <script src="gyutou-binds/seconds.js"></script>
   <script src="demo.js"></script>
 </body>
 </html>
